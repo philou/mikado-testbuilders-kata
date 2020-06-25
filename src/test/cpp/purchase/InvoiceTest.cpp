@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "report/ReportGenerator.h"
+#include "purchase/Invoice.h"
 
 using namespace std;
 
