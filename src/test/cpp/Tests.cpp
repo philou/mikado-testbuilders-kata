@@ -3,11 +3,6 @@
 
 using namespace std;
 
-TEST(Books, DISABLED_empty_test)
-{
-	EXPECT_TRUE(false);
-}
-
 void main(int argc, char** argv)
 {
 	testing::InitGoogleTest(&argc, argv);
