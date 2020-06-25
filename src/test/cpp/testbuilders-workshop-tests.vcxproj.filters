@@ -4,6 +4,12 @@
     <Filter Include="storage">
       <UniqueIdentifier>{727d5a34-34f3-4eba-ade7-cdf213c81dfb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="purchase">
+      <UniqueIdentifier>{5ca895da-3db5-4cff-9ac0-1ce86b40268f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="report">
+      <UniqueIdentifier>{d74e76a5-f493-4f15-b63c-986a1fa9299f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="storage\InMemoryRepository.h">
@@ -18,5 +24,11 @@
       <Filter>storage</Filter>
     </ClCompile>
     <ClCompile Include="Tests.cpp" />
+    <ClCompile Include="report\ReportGeneratorTest.cpp">
+      <Filter>report</Filter>
+    </ClCompile>
+    <ClCompile Include="purchase\InvoiceTest.cpp">
+      <Filter>purchase</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
