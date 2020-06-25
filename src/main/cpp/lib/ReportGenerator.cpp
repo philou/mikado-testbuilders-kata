@@ -12,6 +12,7 @@
 #include "storage/Repository.h"
 #include "purchase/Invoice.h"
 #include "purchase/PurchasedBook.h"
+#include "finance/CurrencyConverter.h"
 
 using namespace purchase;
 
@@ -28,8 +29,9 @@ namespace report
 		double totalAmount = 0.0;
 		for (const auto id2Invoice : invoiceMap)
 		{
-			totalAmount += id2Invoice.second->computeTotalAmount();
-		}
+         const auto& invoice = *id2Invoice.second;
+         totalAmount += finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency());
+      }
 		return totalAmount;
 	}
 
