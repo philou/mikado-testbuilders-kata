@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InMemoryRepository.cpp" />
+    <ClCompile Include="purchase\InvoiceTest.cpp" />
+    <ClCompile Include="report\ReportGeneratorTest.cpp" />
     <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemDefinitionGroup />
