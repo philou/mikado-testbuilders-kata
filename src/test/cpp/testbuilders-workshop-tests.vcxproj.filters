@@ -24,11 +24,14 @@
     <ClInclude Include="storage\InMemoryRepository.h">
       <Filter>storage</Filter>
     </ClInclude>
-    <ClInclude Include="domain\book\NovelBuilder.h">
-      <Filter>domain\book</Filter>
-    </ClInclude>
     <ClInclude Include="domain\country\TestCountries.h">
       <Filter>domain\country</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\NovelTestBuilder.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="purchase\InvoiceTestBuilder.h">
+      <Filter>purchase</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

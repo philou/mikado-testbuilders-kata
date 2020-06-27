@@ -7,7 +7,10 @@ namespace domain
 {
    namespace country
    {
-      const Country France("France", EURO, FRENCH);
+      namespace test_countries
+      {
+         const Country France("France", EURO, FRENCH);
+      }
    }
 }
 
