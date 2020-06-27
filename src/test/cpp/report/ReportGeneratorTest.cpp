@@ -31,7 +31,7 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 
    Author steinbeck("John Steinbeck", usa);
 
-   //auto grapesOfWrath = make_shared<Novel>("Grapes of Wrath", 3.99, , Language::ENGLISH, vector<Genre>());
+   auto grapesOfWrath = make_shared<Novel>("Grapes of Wrath", 3.99, steinbeck, Language::ENGLISH, vector<Genre>());
 
    Invoice invoice("John Doe", france);
    //invoice.addPurchasedBook(make_shared<PurchasedBook>(), 1)
