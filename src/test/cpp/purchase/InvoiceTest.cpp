@@ -9,6 +9,7 @@
 using namespace std;
 using namespace domain::book;
 using namespace domain::country;
+using namespace domain::country::test_countries;
 using namespace purchase;
 
 TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_current_rate)
@@ -18,7 +19,7 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
    //   .build();
 
    auto invoice = anInvoice()
-   //   .from(France)
+      .from(France)
       .build();
 
    //EXPECT_EQ(
