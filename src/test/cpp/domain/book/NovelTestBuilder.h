@@ -11,10 +11,19 @@ namespace domain
       class NovelTestBuilder
       {
       public:
+         NovelTestBuilder& costing(double price)
+         {
+            this->price_ = price;
+            return *this;
+         }
+
          Novel build()
          {
-            return Novel("A book about...", 3.99, anAuthor().build(), country::Language::ENGLISH, std::vector<Genre>());
+            return Novel("A book about...", price_, anAuthor().build(), country::Language::ENGLISH, std::vector<Genre>());
          }
+
+      private:
+         double price_ = 3.99;
       };
 
       NovelTestBuilder aNovel()
