@@ -16,6 +16,6 @@ using namespace report;
 TEST(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 {
    Country france("France", Currency::EURO, Language::FRENCH);
-   //Invoice invoice("John Doe", Country)
+   Invoice invoice("John Doe", france);
    //EXPECT_EQ(finance::toUSD(invoice...), reportGenerator.getTotalAmount());
 }
