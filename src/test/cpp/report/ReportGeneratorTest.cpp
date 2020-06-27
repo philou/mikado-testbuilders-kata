@@ -37,7 +37,7 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
    auto invoice = make_shared<Invoice>("John Doe", france);
    invoice->addPurchasedBook(make_shared<PurchasedBook>(grapesOfWrath, 1));
 
-   //repository->addInvoice(invo)
+   repository->addInvoice(invoice);
 
    ReportGenerator reportGenerator;
    //EXPECT_EQ(
