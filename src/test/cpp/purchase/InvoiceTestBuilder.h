@@ -22,7 +22,7 @@ namespace purchase
 
    private:
       std::shared_ptr<domain::country::Country> country_ = 
-         std::make_shared<domain::country::Country>(domain::country::test_countries::France);
+         std::make_shared<domain::country::Country>(domain::country::test_countries::USA);
    };
 
    InvoiceTestBuilder anInvoice()

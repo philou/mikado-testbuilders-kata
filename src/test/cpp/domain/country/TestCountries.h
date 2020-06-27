@@ -9,6 +9,7 @@ namespace domain
    {
       namespace test_countries
       {
+         const Country USA("USA", US_DOLLAR, ENGLISH);
          const Country France("France", EURO, FRENCH);
       }
    }
