@@ -16,7 +16,7 @@ using namespace purchase;
 TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_current_rate)
 {
    auto novel = aNovel()
-   //   .costing(7.99)
+      .costing(7.99)
       .build();
 
    auto invoice = anInvoice()
@@ -24,6 +24,6 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
       .build();
 
    //EXPECT_EQ(
-   //   book.getPrice() * finance::getApplicableRate(invoiceCountry, book),
+   //   novel.getPrice() * finance::getApplicableRate(France, novel),
    //   invoice.computeTotalAmount());
 }
