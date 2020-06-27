@@ -13,14 +13,14 @@ using namespace purchase;
 TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_current_rate)
 {
    Country france("France", Currency::EURO, Language::FRENCH);
-   Invoice invoice("John Doe", france);
-
    Country usa("USA", Currency::US_DOLLAR, Language::ENGLISH);
    Author steinbeck("John Steinbeck", usa);
+   auto grapesOfWrath = make_shared<Novel>("Grapes of Wrath", 7.99, steinbeck, Language::ENGLISH, vector<Genre>());
 
-   Novel grapesOfWrath("Grapes of Wrath", 7.99, steinbeck, Language::ENGLISH, vector<Genre>());
+   Invoice invoice("John Doe", france);
+//   invoice.addPurchasedBook(grapesOfWrath, 1);
 
-   double rate = finance::getApplicableRate(invoice.getCountry(), grapesOfWrath);
+   double rate = finance::getApplicableRate(invoice.getCountry(), *grapesOfWrath);
 
-   //EXPECT_EQ(bookPrice * rate, invoice.computeTotalAmount);
+   //EXPECT_EQ(grapesOfWrath.getPrice() * rate, invoice.computeTotalAmount());
 }
