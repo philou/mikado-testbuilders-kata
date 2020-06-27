@@ -16,7 +16,7 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
    Invoice invoice("John Doe", france);
 
    Country usa("USA", Currency::US_DOLLAR, Language::ENGLISH);
-   //Author steinbeck("John Steinbeck", USA);
+   Author steinbeck("John Steinbeck", usa);
 
    //Novel grapesOfWrath("Grapes of Wrath", 7.99, , Language::ENGLISH, vector<Genre>());
 
