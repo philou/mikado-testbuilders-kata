@@ -13,6 +13,9 @@ using namespace domain::country;
 using namespace purchase;
 using namespace report;
 
-TEST(ReportGeneratorTest, DISABLED_converts_invoice_amounts_to_USD_before_summing_them)
+TEST(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 {
+   Country france("France", Currency::EURO, Language::FRENCH);
+   //Invoice invoice("John Doe", Country)
+   //EXPECT_EQ(finance::toUSD(invoice...), reportGenerator.getTotalAmount());
 }
