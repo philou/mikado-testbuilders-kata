@@ -33,6 +33,9 @@
     <ClInclude Include="purchase\InvoiceTestBuilder.h">
       <Filter>purchase</Filter>
     </ClInclude>
+    <ClInclude Include="domain\book\AuthorTestBuilder.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

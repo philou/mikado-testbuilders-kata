@@ -58,6 +58,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="domain\book\AuthorTestBuilder.h" />
     <ClInclude Include="domain\book\NovelTestBuilder.h" />
     <ClInclude Include="domain\country\TestCountries.h" />
     <ClInclude Include="purchase\InvoiceTestBuilder.h" />
