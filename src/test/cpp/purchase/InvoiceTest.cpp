@@ -14,7 +14,7 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
 {
    Country france("France", Currency::EURO, Language::FRENCH);
 
-   //Invoice invoice("John Doe", );
+   Invoice invoice("John Doe", france);
 
 //   EXPECT_EQ(bookPrice * rate, invoice.computeTotalAmount);
 }
