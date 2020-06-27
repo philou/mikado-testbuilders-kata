@@ -40,7 +40,7 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
    repository->addInvoice(invoice);
 
    ReportGenerator reportGenerator;
-   //EXPECT_EQ(
-   //   finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency()),
-   //   reportGenerator.getTotalAmount());
+   EXPECT_EQ(
+      finance::toUSD(invoice->computeTotalAmount(), invoice->getCountry().getCurrency()),
+      reportGenerator.getTotalAmount());
 }
