@@ -18,7 +18,7 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
    auto grapesOfWrath = make_shared<Novel>("Grapes of Wrath", 7.99, steinbeck, Language::ENGLISH, vector<Genre>());
 
    Invoice invoice("John Doe", france);
-//   invoice.addPurchasedBook(grapesOfWrath, 1);
+   invoice.addPurchasedBook(make_shared<PurchasedBook>(grapesOfWrath, 1));
 
    double rate = finance::getApplicableRate(invoice.getCountry(), *grapesOfWrath);
 
