@@ -22,5 +22,5 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
 
    double rate = finance::getApplicableRate(invoice.getCountry(), *grapesOfWrath);
 
-   //EXPECT_EQ(grapesOfWrath.getPrice() * rate, invoice.computeTotalAmount());
+   EXPECT_EQ(grapesOfWrath->getPrice() * rate, invoice.computeTotalAmount());
 }
