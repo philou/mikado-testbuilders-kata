@@ -24,7 +24,8 @@ class ReportGeneratorTest : public ::testing::Test
 
 TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 {
-   main_repository::override(make_shared<InMemoryRepository>());
+   auto repository = make_shared<InMemoryRepository>();
+   main_repository::override(repository);
 
    Country france("France", Currency::EURO, Language::FRENCH);
    Country usa("USA", Currency::US_DOLLAR, Language::ENGLISH);
@@ -33,11 +34,13 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 
    auto grapesOfWrath = make_shared<Novel>("Grapes of Wrath", 3.99, steinbeck, Language::ENGLISH, vector<Genre>());
 
-   Invoice invoice("John Doe", france);
-   //invoice.addPurchasedBook(make_shared<PurchasedBook>(), 1)
+   auto invoice = make_shared<Invoice>("John Doe", france);
+   invoice->addPurchasedBook(make_shared<PurchasedBook>(grapesOfWrath, 1));
+
+   //repository->addInvoice(invo)
 
    ReportGenerator reportGenerator;
-   EXPECT_EQ(
-      finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency()),
-      reportGenerator.getTotalAmount());
+   //EXPECT_EQ(
+   //   finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency()),
+   //   reportGenerator.getTotalAmount());
 }
