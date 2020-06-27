@@ -5,6 +5,7 @@
 #include "domain/book/Novel.h"
 #include "purchase/PurchasedBook.h"
 #include "InvoiceTestBuilder.h"
+#include "domain/book/NovelTestBuilder.h"
 
 using namespace std;
 using namespace domain::book;
@@ -14,9 +15,9 @@ using namespace purchase;
 
 TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_current_rate)
 {
-   //auto novel = aNovel()
+   auto novel = aNovel()
    //   .costing(7.99)
-   //   .build();
+      .build();
 
    auto invoice = anInvoice()
       .from(France)

@@ -10,11 +10,11 @@ namespace domain
    {
       class AuthorTestBuilder
       {
+      public:
          Author build()
          {
             return Author("Pen writer", country::test_countries::USA);
          }
-         
       };
 
       AuthorTestBuilder anAuthor()
