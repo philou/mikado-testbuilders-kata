@@ -8,11 +8,11 @@ namespace domain
 {
    namespace book
    {
- /*     class AuthorTestBuilder
+      class AuthorTestBuilder
       {
          Author build()
          {
-            return Author("Pen writer", domain::country::test_countries::USA);
+            return Author("Pen writer", country::test_countries::USA);
          }
          
       };
@@ -20,7 +20,7 @@ namespace domain
       AuthorTestBuilder anAuthor()
       {
          return {};
-      }*/
+      }
    }
 }
 
