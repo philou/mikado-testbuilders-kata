@@ -20,5 +20,7 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
 
    Novel grapesOfWrath("Grapes of Wrath", 7.99, steinbeck, Language::ENGLISH, vector<Genre>());
 
+   double rate = finance::getApplicableRate(invoice.getCountry(), grapesOfWrath);
+
    //EXPECT_EQ(bookPrice * rate, invoice.computeTotalAmount);
 }
