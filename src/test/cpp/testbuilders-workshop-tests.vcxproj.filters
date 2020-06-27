@@ -10,10 +10,25 @@
     <Filter Include="report">
       <UniqueIdentifier>{d74e76a5-f493-4f15-b63c-986a1fa9299f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="domain">
+      <UniqueIdentifier>{02852f2c-e08b-4482-8a90-6d78f176e472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\book">
+      <UniqueIdentifier>{aceec431-e7ec-47f4-8057-b8ed75a0797e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\country">
+      <UniqueIdentifier>{6931d4a8-950f-404a-8279-0cf07e61a87c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="storage\InMemoryRepository.h">
       <Filter>storage</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\book\NovelBuilder.h">
+      <Filter>domain\book</Filter>
+    </ClInclude>
+    <ClInclude Include="domain\country\TestCountries.h">
+      <Filter>domain\country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

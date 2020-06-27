@@ -58,6 +58,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="domain\book\NovelBuilder.h" />
+    <ClInclude Include="domain\country\TestCountries.h" />
     <ClInclude Include="storage\InMemoryRepository.h" />
   </ItemGroup>
   <ItemGroup>
