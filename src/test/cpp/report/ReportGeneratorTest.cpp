@@ -29,7 +29,7 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
    Country france("France", Currency::EURO, Language::FRENCH);
    Country usa("USA", Currency::US_DOLLAR, Language::ENGLISH);
 
-   //Author steinbeck("John Steinbeck", )
+   Author steinbeck("John Steinbeck", usa);
 
    //auto grapesOfWrath = make_shared<Novel>("Grapes of Wrath", 3.99, , Language::ENGLISH, vector<Genre>());
 
