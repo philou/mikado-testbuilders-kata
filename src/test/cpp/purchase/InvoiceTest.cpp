@@ -18,7 +18,7 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
    Country usa("USA", Currency::US_DOLLAR, Language::ENGLISH);
    Author steinbeck("John Steinbeck", usa);
 
-   //Novel grapesOfWrath("Grapes of Wrath", 7.99, , Language::ENGLISH, vector<Genre>());
+   Novel grapesOfWrath("Grapes of Wrath", 7.99, steinbeck, Language::ENGLISH, vector<Genre>());
 
-//   EXPECT_EQ(bookPrice * rate, invoice.computeTotalAmount);
+   //EXPECT_EQ(bookPrice * rate, invoice.computeTotalAmount);
 }
