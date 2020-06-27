@@ -12,11 +12,24 @@ using namespace domain::book;
 using namespace domain::country;
 using namespace purchase;
 using namespace report;
+using namespace storage;
 
-TEST(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
+class ReportGeneratorTest : public ::testing::Test
 {
+   void TearDown() override
+   {
+      main_repository::reset();
+   }
+};
+
+TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
+{
+   main_repository::override(make_shared<InMemoryRepository>());
+
    Country france("France", Currency::EURO, Language::FRENCH);
    Invoice invoice("John Doe", france);
-   ReportGenerator reportGenerator();
-   //EXPECT_EQ(finance::toUSD(invoice...), reportGenerator.getTotalAmount());
+   ReportGenerator reportGenerator;
+   EXPECT_EQ(
+      finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency()),
+      reportGenerator.getTotalAmount());
 }
