@@ -17,7 +17,7 @@ namespace domain
             return *this;
          }
 
-         Novel build()
+         Novel build() const
          {
             return Novel("A book about...", price_, anAuthor().build(), country::Language::ENGLISH, std::vector<Genre>());
          }
@@ -26,7 +26,7 @@ namespace domain
          double price_ = 3.99;
       };
 
-      NovelTestBuilder aNovel()
+      inline NovelTestBuilder aNovel()
       {
          return {};
       }

@@ -9,9 +9,9 @@ namespace purchase
    class PurchasedBookTestBuilder
    {
    public:
-      PurchasedBookTestBuilder& of(const domain::book::NovelTestBuilder& novel)
+      PurchasedBookTestBuilder& of(const domain::book::Novel& novel)
       {
-         this->book_ = std::make_shared<domain::book::Novel>(novel.build());
+         this->book_ = std::make_shared<domain::book::Novel>(novel);
          return *this;
       }
 

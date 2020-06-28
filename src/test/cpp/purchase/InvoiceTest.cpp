@@ -21,9 +21,10 @@ TEST(InvoiceTest, total_amount_is_converted_to_currency_of_invoice_country_at_cu
 
    auto invoice = anInvoice()
       .from(France)
+      .with(aPurchasedBook().of(novel))
       .build();
 
-   //EXPECT_EQ(
-   //   novel.getPrice() * finance::getApplicableRate(France, novel),
-   //   invoice.computeTotalAmount());
+   EXPECT_EQ(
+      novel.getPrice() * finance::getApplicableRate(France, novel),
+      invoice.computeTotalAmount());
 }

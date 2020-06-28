@@ -2,6 +2,7 @@
 #define TESTBUILDERS_WORKSHOP_TESTS_PURCHASE_INVOICE_TEST_BUILDER_H_INCLUDED
 
 #include "domain/country/TestCountries.h"
+#include "PurchasedBookTestBuilder.h"
 
 namespace purchase
 {
@@ -15,17 +16,27 @@ namespace purchase
          return *this;
       }
 
-      Invoice build()
+      InvoiceTestBuilder& with(const PurchasedBookTestBuilder& purchasedBook)
       {
-         return Invoice("John Doe", domain::country::Country(*country_));
+         this->purchasedBooks_.push_back(std::make_shared<PurchasedBook>(purchasedBook.build()));
+         return *this;
+      }
+
+      Invoice build() const
+      {
+         Invoice result("John Doe", domain::country::Country(*country_));
+         result.addPurchasedBooks(purchasedBooks_);
+         return result;
       }
 
    private:
       std::shared_ptr<domain::country::Country> country_ = 
          std::make_shared<domain::country::Country>(domain::country::test_countries::USA);
+
+      std::vector<std::shared_ptr<const PurchasedBook>> purchasedBooks_;
    };
 
-   InvoiceTestBuilder anInvoice()
+   inline InvoiceTestBuilder anInvoice()
    {
       return {};
    }
