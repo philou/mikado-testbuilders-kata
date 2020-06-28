@@ -17,7 +17,7 @@ namespace domain
          }
       };
 
-      AuthorTestBuilder anAuthor()
+      inline AuthorTestBuilder anAuthor()
       {
          return {};
       }
