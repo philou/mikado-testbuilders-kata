@@ -16,17 +16,21 @@ using namespace storage;
 
 class ReportGeneratorTest : public ::testing::Test
 {
+protected:
+   void SetUp() override
+   {
+      main_repository::override(repository_);
+   }
    void TearDown() override
    {
       main_repository::reset();
    }
+
+   shared_ptr<InMemoryRepository> repository_ = make_shared<InMemoryRepository>();
 };
 
 TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 {
-   auto repository = make_shared<InMemoryRepository>();
-   main_repository::override(repository);
-
    Country france("France", Currency::EURO, Language::FRENCH);
    Country usa("USA", Currency::US_DOLLAR, Language::ENGLISH);
 
@@ -37,7 +41,7 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
    auto invoice = make_shared<Invoice>("John Doe", france);
    invoice->addPurchasedBook(make_shared<PurchasedBook>(grapesOfWrath, 1));
 
-   repository->addInvoice(invoice);
+   repository_->addInvoice(invoice);
 
    ReportGenerator reportGenerator;
    EXPECT_EQ(
