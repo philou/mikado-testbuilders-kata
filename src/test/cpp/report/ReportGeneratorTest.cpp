@@ -13,6 +13,17 @@ using namespace domain::country;
 using namespace purchase;
 using namespace report;
 
-TEST(ReportGeneratorTest, DISABLED_converts_invoice_amounts_to_USD_before_summing_them)
+class ReportGeneratorTest : public ::testing::Test
+{
+protected:
+   void SetUp() override
+   {
+   }
+   void TearDown() override
+   {
+   }
+};
+
+TEST_F(ReportGeneratorTest, DISABLED_converts_invoice_amounts_to_USD_before_summing_them)
 {
 }
