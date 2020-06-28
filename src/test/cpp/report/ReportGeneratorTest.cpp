@@ -14,8 +14,19 @@ using namespace domain::country;
 using namespace purchase;
 using namespace report;
 
-TEST(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
+class ReportGeneratorTest : public ::testing::Test
 {
+protected:
+   void TearDown() override
+   {
+      main_repository::reset();
+   }
+};
+
+TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
+{
+   main_repository::override(std::make_shared<storage::InMemoryRepository>());
+
    auto invoice = anInvoice().build();
    ReportGenerator reportGenerator;
 
