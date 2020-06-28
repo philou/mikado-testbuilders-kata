@@ -27,7 +27,10 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 {
    main_repository::override(std::make_shared<storage::InMemoryRepository>());
 
-   auto invoice = anInvoice().build();
+   auto invoice = anInvoice()
+   .with(aPurchasedBook())
+   .build();
+
    ReportGenerator reportGenerator;
 
    EXPECT_EQ(
