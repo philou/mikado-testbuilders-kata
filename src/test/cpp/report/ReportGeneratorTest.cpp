@@ -25,16 +25,18 @@ protected:
 
 TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 {
-   main_repository::override(std::make_shared<storage::InMemoryRepository>());
+   auto in_memory_repository = std::make_shared<storage::InMemoryRepository>();
+   main_repository::override(in_memory_repository);
 
-   auto invoice = anInvoice()
-   .with(aPurchasedBook())
-   .build();
+   auto invoice = std::make_shared<Invoice>(anInvoice()
+      .with(aPurchasedBook())
+      .build());
 
+   in_memory_repository->addInvoice(invoice);
    ReportGenerator reportGenerator;
 
    EXPECT_EQ(
-      finance::toUSD(invoice.computeTotalAmount(), invoice.getCountry().getCurrency()),
+      finance::toUSD(invoice->computeTotalAmount(), invoice->getCountry().getCurrency()),
       reportGenerator.getTotalAmount()
    );
 }
