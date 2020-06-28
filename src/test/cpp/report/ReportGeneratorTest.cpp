@@ -29,6 +29,7 @@ TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
    main_repository::override(in_memory_repository);
 
    auto invoice = std::make_shared<Invoice>(anInvoice()
+      .from(test_countries::France)
       .with(aPurchasedBook())
       .build());
 
