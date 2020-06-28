@@ -17,23 +17,28 @@ using namespace report;
 class ReportGeneratorTest : public ::testing::Test
 {
 protected:
+   void SetUp() override
+   {
+      main_repository::override(in_memory_repository_);
+   }
+
    void TearDown() override
    {
       main_repository::reset();
    }
+
+   std::shared_ptr<storage::InMemoryRepository> in_memory_repository_
+      = std::make_shared<storage::InMemoryRepository>();
 };
 
 TEST_F(ReportGeneratorTest, converts_invoice_amounts_to_USD_before_summing_them)
 {
-   auto in_memory_repository = std::make_shared<storage::InMemoryRepository>();
-   main_repository::override(in_memory_repository);
-
    auto invoice = std::make_shared<Invoice>(anInvoice()
       .from(test_countries::France)
       .with(aPurchasedBook())
       .build());
 
-   in_memory_repository->addInvoice(invoice);
+   in_memory_repository_->addInvoice(invoice);
    ReportGenerator reportGenerator;
 
    EXPECT_EQ(
