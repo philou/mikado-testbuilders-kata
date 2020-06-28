@@ -9,14 +9,23 @@ namespace purchase
    class PurchasedBookTestBuilder
    {
    public:
-
-      PurchasedBook build()
+      PurchasedBookTestBuilder& of(const domain::book::NovelTestBuilder& novel)
       {
-         return PurchasedBook(std::make_shared<domain::book::Novel>(domain::book::aNovel().build()), 1);
+         this->book_ = std::make_shared<domain::book::Novel>(novel.build());
+         return *this;
       }
+
+      PurchasedBook build() const
+      {
+         return PurchasedBook(book_, 1);
+      }
+
+   private:
+      std::shared_ptr<domain::book::Novel> book_ = 
+         std::make_shared<domain::book::Novel>(domain::book::aNovel().build());
    };
 
-   PurchasedBookTestBuilder aPurchasedBook()
+   inline PurchasedBookTestBuilder aPurchasedBook()
    {
       return {};
    }
