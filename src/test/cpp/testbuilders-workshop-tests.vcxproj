@@ -62,6 +62,7 @@
     <ClInclude Include="domain\book\NovelTestBuilder.h" />
     <ClInclude Include="domain\country\TestCountries.h" />
     <ClInclude Include="purchase\InvoiceTestBuilder.h" />
+    <ClInclude Include="purchase\PurchasedBookTestBuilder.h" />
     <ClInclude Include="storage\InMemoryRepository.h" />
   </ItemGroup>
   <ItemGroup>
