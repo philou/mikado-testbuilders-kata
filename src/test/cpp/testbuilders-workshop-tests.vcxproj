@@ -58,7 +58,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="domain\country\TestCountries.h" />
     <ClInclude Include="storage\InMemoryRepository.h" />
+    <ClInclude Include="HeaderTemplate.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

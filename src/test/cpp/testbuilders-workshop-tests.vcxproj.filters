@@ -10,10 +10,23 @@
     <Filter Include="report">
       <UniqueIdentifier>{d74e76a5-f493-4f15-b63c-986a1fa9299f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="domain">
+      <UniqueIdentifier>{d13ec0c6-696b-4f16-ac33-4f264e033df4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\book">
+      <UniqueIdentifier>{f2b5c0ed-9027-4a12-a06f-510a75969626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain\country">
+      <UniqueIdentifier>{29206ea6-e9fe-438f-b9d5-f8632e53f27e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="storage\InMemoryRepository.h">
       <Filter>storage</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderTemplate.h" />
+    <ClInclude Include="domain\country\TestCountries.h">
+      <Filter>domain\country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
