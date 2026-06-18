@@ -110,10 +110,10 @@ distribution, and is available at the Open Source site [here](https://opensource
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/rmadisonhaynie>
-            <img src=https://avatars.githubusercontent.com/u/15270726?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=R. Madison Haynie/>
+        <a href=https://github.com/rmadisonhaynie1>
+            <img src=https://avatars.githubusercontent.com/u/250217202?v=4 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=rmadisonhaynie1/>
             <br />
-            <sub style="font-size:14px"><b>R. Madison Haynie</b></sub>
+            <sub style="font-size:14px"><b>rmadisonhaynie1</b></sub>
         </a>
     </td>
 </tr>
